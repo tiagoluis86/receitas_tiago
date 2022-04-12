@@ -1,0 +1,56 @@
+<HTML>
+<header>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    {% load static %}
+</header>
+<body>
+
+<div class="container">
+
+    <div class="row" style="margin-top: 30px; background-color: #FFFFFF;">
+        <div class="col;" style="margin-bottom: 30px; border-style: solid; border-color: black; margin-top: 30px; background-color: #FFFFFF;">
+            <h3>Receitas do Tiago</h3>
+            <h5>Welcome, please login to enter</h5>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 30px; border-style: solid; border-color: black; margin-top: 30px; background-color: #FFFFFF;">
+        <div align="center" class="col" style="margin-top: 30px; background-color: #FFFFFF;">
+
+            <img src="{% static 'images/logo.png' %}" alt="logo" style="width: 200px;">
+            
+        </div>
+
+        <div class="col" style="margin-top: 30px; border-color: black; background-color: #FFFFFF;">
+            <form action="submit" method="POST">{% csrf_token %}
+            <div align="left">
+            <label>User:</label>
+                 <div class="w-100 d-none d-md-block"></div>
+            <input type="text" name="username">
+                 <div class="w-100 d-none d-md-block"></div>
+            <label>Password:</label>
+                  <div class="w-100 d-none d-md-block"></div>
+            <input type="password" name="password">
+
+            <button type="submit">Login</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="container" style="border-style: solid; border-color: black; background-color: #FFFFFF;">
+    <p>2022 por Tiago</p>
+</div>
+
+    {% for message in messages %}
+        <div align="center">
+            <strong>Erro! </strong>{{ message }}
+        </div>
+    {% endfor %}
+</body>
+
+</HTML>

@@ -1,0 +1,31 @@
+
+
+    
+{% extends "model-page.html" %}
+
+{% block content %}
+
+<div class="container" style="border-style: solid; border-color: black; background-color: #FFFFFF;">
+{% for profile in profiles %}
+  <h2>Olá {{ profile.name }} {{ profile.last_name }}</h2>
+{% endfor %}
+</div>
+
+
+<div class="container" style="border-style: solid; border-color: black; background-color: #FFFFFF;">
+
+<h3>Minhas receitas</h3>
+
+{% for receita in receitas %}
+    <img src="{{emp.emp_image.url}}" alt="img" width="250" height="250">
+    <h2> {{ receita.titulo }}</h2>
+    <p> {{ receita.modo_de_fazer }}</p>
+{% endfor %}    
+    
+</div>
+
+    
+{% endblock %}    
+
+
+
