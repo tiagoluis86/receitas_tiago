@@ -11,19 +11,24 @@
 {% endfor %}
 </div>
 
-
 <div class="container" style="border-style: solid; border-color: black; background-color: #FFFFFF;">
 
 <h3>Minhas receitas</h3>
 
+
 {% for receita in receitas %}
-    <img src="{{emp.emp_image.url}}" alt="img" width="250" height="250">
+
+    <img src ="{{ receita.foto }}">
+  
+    <img src="{{ receita.foto.url }}" alt="">
+ 
     <h2> {{ receita.titulo }}</h2>
     <p> {{ receita.modo_de_fazer }}</p>
-{% endfor %}    
-    
-</div>
 
+{% endfor %}    
+
+
+</div>
     
 {% endblock %}    
 
